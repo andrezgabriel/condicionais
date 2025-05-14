@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sistema de Classificação de Usuário</title>
+</head>
+<body>
+  <h2></h2>
+
+  <script>
+    // Solicita a idade e o status do usuário
+    let idade = prompt("Digite sua idade:");
+    let status = prompt("Digite seu status (registrado ou não registrado):");
+
+    // Converte idade para número
+    idade = Number(idade);
+
+    // Verifica se o usuário é maior ou menor de idade (operador ternário)
+    let tipoIdade = (idade >= 18) ? "maior de idade" : "menor de idade";
+    console.log(`Você é ${tipoIdade}.`);
+
+    // Exibe mensagem com base no status (estrutura switch)
+    switch (status.toLowerCase()) {
+      case "registrado":
+        console.log("Bem-vindo de volta!");
+        break;
+      case "não registrado":
+      case "nao registrado":
+        console.log("Por favor, complete seu registro.");
+        break;
+      default:
+        console.log("Status desconhecido.");
+        break;
+    }
+
+    // Verifica as condições de acesso com operadores lógicos
+    if (idade >= 18 && status.toLowerCase() === "registrado") {
+      console.log("Acesso completo concedido.");
+    } else {
+      console.log("Acesso limitado.");
+    }
+  </script>
+</body>
+</html>
